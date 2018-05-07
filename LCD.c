@@ -98,12 +98,12 @@ void LCDclose()
 
 void LCDlightOn(){
 	LIGHT_STATE = LIGHT_ON;
-    LCDwrite(0,10);
+    LCDwrite(0,LCD_SERV);
 }
 
 void LCDlightOff(){
     LIGHT_STATE = LIGHT_OFF;
-    LCDwrite(0,10);
+    LCDwrite(0,LCD_SERV);
 }
 
 /*
