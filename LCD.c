@@ -15,14 +15,14 @@ int LCDwrite(char byte,int mode)
 
 void toggle(char byte[])
 {
-    //delay(1);
+    delay(1);
     char tmpbuf[1];
     tmpbuf[0] = (byte[0] | ENABLE);
     I2Cwrite(tmpbuf,1);
-    //delay(10);
+    delay(10);
     tmpbuf[0] = (byte[0] & ~ENABLE);
     I2Cwrite(tmpbuf,1);
- //   delay(1);
+    delay(1);
 }
 int getLength(char* str){
     int i=0;
@@ -80,7 +80,7 @@ void LCDinit()
     LCDwrite(0x0C,LCD_SERV); 
     LCDwrite(0x28,LCD_SERV);
     LCDwrite(0x01,LCD_SERV);
-    //delay(1);
+    delay(1);
     LIGHT_STATE = LIGHT_ON;
 
 }

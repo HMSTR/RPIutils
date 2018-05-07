@@ -1,6 +1,6 @@
 #include "utils.h"
 
 void delay(int sec){
-    unsigned int timer = time(0)+sec;
-    while(time(0)<timer);
+    unsigned int timer = clock()+sec*100;
+    while(clock()<timer);
 }
