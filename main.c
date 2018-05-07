@@ -1,5 +1,3 @@
-#include"I2C.h"
-#include"LCD.h"
 #include <time.h>
 
 int main(){
