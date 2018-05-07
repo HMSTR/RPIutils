@@ -24,3 +24,5 @@ void LCDinit();
 void LCDprint(char* message,int line);
 void LCDclose();
 void LCDgoto(int x,int y);
+void LCDlightOff();
+void LCDlightOn();
