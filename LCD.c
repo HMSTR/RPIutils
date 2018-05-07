@@ -106,6 +106,11 @@ void LCDlightOff(){
     LCDwrite(0,LCD_SERV);
 }
 
+void LCDclear(){
+    LCDwrite(0x01,LCD_SERV);
+}
+
+
 /*
 int Exmaple(){
 

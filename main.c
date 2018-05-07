@@ -10,8 +10,12 @@ int main(){
         LCDprint(strTime,1);
         if(timer % 2)
             LCDlightOn();
-        else
+        else{
             LCDlightOff();
+            delay(100);
+            LCDlightOn();
+            LCDclear();
+    }
     }
     LCDclose();
     return 1;
