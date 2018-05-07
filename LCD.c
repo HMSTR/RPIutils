@@ -2,11 +2,6 @@
 extern i2c;
 int LIGHT_STATE;
 
-void delay(int k){
-    int i;
-    for(i=0;i<k*1e4;i++);
-}
-
 int LCDwrite(char byte,int mode)
 {
     char bits_high[1] = {mode | (byte & 0xF0) | LIGHT_STATE};
@@ -27,7 +22,7 @@ void toggle(char byte[])
     delay(10);
     tmpbuf[0] = (byte[0] & ~ENABLE);
     I2Cwrite(tmpbuf,1);
-    delay(10);
+ //   delay(1);
 }
 int getLength(char* str){
     int i=0;

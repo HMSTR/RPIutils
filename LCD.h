@@ -1,5 +1,6 @@
 #pragma once
 #include "I2C.h"
+#inclde "utils.h"
 #define LCD_ADDR  0x27
 #define LCD_WIDTH 20
 
@@ -25,3 +26,4 @@ void LCDclose();
 void LCDgoto(int x,int y);
 void LCDlightOff();
 void LCDlightOn();
+void LCDclear();

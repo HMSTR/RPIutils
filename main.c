@@ -12,9 +12,10 @@ int main(){
             LCDlightOn();
         else{
             LCDlightOff();
-            delay(100);
+            delay(2);
             LCDlightOn();
             LCDclear();
+            delay(5);
     }
     }
     LCDclose();
