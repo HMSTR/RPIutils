@@ -26,10 +26,4 @@ unsigned char* I2Cread()
     return buffer;
 }
 	
-void I2Cwrite(char buffer[],int length)
-{
-		if (write(i2c, buffer, length) != length)
-    {
-		printf("ERROR: Failed to write into the i2c bus. input %c\n",buffer[0]);
-	}
-}
+

@@ -91,6 +91,25 @@ void LCDclose()
 {
     close(i2c);
 }
+
+// void LiquidCrystal_I2C::noBacklight(void) {
+// 	_backlightval=LCD_NOBACKLIGHT;
+// 	expanderWrite(0);
+// }
+
+// void LiquidCrystal_I2C::backlight(void) {
+// 	_backlightval=LCD_BACKLIGHT;
+// 	expanderWrite(0);
+// }
+
+void LCDlightOn(){
+	I2Cwrite(LIGHT_ON);
+}
+
+void LCDlightOff(){
+	I2Cwrite(LIGHT_OFF);
+}
+
 /*
 int Exmaple(){
 

@@ -14,5 +14,5 @@ LCD.o:
 clear:
 	rm *.o
 
-LCDExample: I2C.o LCD.o
+LCD: I2C.o LCD.o
 	gcc I2C.o LCD.o main.c -o LCDTest
