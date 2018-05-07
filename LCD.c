@@ -103,11 +103,11 @@ void LCDclose()
 // }
 
 void LCDlightOn(){
-	I2Cwrite(LIGHT_ON);
+	I2Cwrite(LIGHT_ON,1);
 }
 
 void LCDlightOff(){
-	I2Cwrite(LIGHT_OFF);
+	I2Cwrite(LIGHT_OFF,1);
 }
 
 /*
