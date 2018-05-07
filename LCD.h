@@ -1,6 +1,6 @@
 #pragma once
 #include "I2C.h"
-#inclde "utils.h"
+#include "utils.h"
 #define LCD_ADDR  0x27
 #define LCD_WIDTH 20
 
