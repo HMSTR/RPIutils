@@ -1,5 +1,7 @@
 #include "LCD.h"
 extern i2c;
+int LIGHT_STATE;
+
 void delay(int k){
     int i;
     for(i=0;i<k*1e4;i++);
@@ -84,6 +86,7 @@ void LCDinit()
     LCDwrite(0x28,LCD_SERV);
     LCDwrite(0x01,LCD_SERV);
     delay(10);
+    LIGHT_STATE = LIGHT_ON;
 
 }
 
@@ -94,11 +97,13 @@ void LCDclose()
 
 
 void LCDlightOn(){
-	LCDwrite(LIGHT_ON,1);
+	LIGHT_STATE = LIGHT_ON;
+    LCDwrite(0,10);
 }
 
 void LCDlightOff(){
-	LCDwrite(LIGHT_OFF,1);
+    LIGHT_STATE = LIGHT_OFF;
+    LCDwrite(0,10);
 }
 
 /*

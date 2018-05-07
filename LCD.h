@@ -15,7 +15,6 @@
 
 #define LIGHT_ON 0x08
 #define LIGHT_OFF 0x00
-#define LIGHT_STATE LIGHT_ON
 
 
 #define ENABLE 0b00000100
