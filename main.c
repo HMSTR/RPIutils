@@ -14,5 +14,7 @@ int main() {
     cout << "---------------------------------" << endl;
     cout << "devices = " << n << endl;
     cout << "---------------------------------" << endl;
+  } catch(const std::exception& e){
+    ;
   }
 }
