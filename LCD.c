@@ -106,6 +106,19 @@ void LCDclear(){
 }
 
 
+void LCDExample(){
+     char *buf = "Current Time:";
+     LCDinit();
+     while(1){
+         LCDprint(buf,0);
+         const time_t timer = time(NULL);
+         char *strTime = ctime(&timer);
+         LCDprint(strTime,1);
+     }
+     LCDclose();
+}
+
+
 /*
 int Exmaple(){
 

@@ -27,3 +27,4 @@ void LCDgoto(int x,int y);
 void LCDlightOff();
 void LCDlightOn();
 void LCDclear();
+void LCDExample();
