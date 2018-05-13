@@ -1,6 +1,6 @@
 #include <time.h>
 
-int main(){
+void time(){
     char *buf = "Current Time:";
     LCDinit();
     while(1){
@@ -10,5 +10,15 @@ int main(){
         LCDprint(strTime,1);
     }
     LCDclose();
-    return 1;
+}
+
+void LED(){
+    LEDinit();
+    LEDbroadcast(1);
+}
+
+
+int main(){
+    //time();
+    LED();
 }

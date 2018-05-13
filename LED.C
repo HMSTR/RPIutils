@@ -1,6 +1,6 @@
 #include "LED.h"
 
-void init(){
+void LEDinit(){
     pinMode(LED_RED,OUTPUT);
     pinMode(LED_BL1,OUTPUT);
     pinMode(LED_BL2,OUTPUT);
@@ -9,7 +9,7 @@ void init(){
     pinMode(LED_YEL,OUTPUT);
 }
 
-void broadcast(int val){
+void LEDbroadcast(int val){
     digitalWrite(LED_RED,(val)?1:0);
     digitalWrite(LED_BL1,(val)?1:0);
     digitalWrite(LED_BL2,(val)?1:0);
