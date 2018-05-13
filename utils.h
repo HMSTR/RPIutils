@@ -1,4 +1,5 @@
 #pragma once
-#include<time.h>
+#include <time.h>
 
 void delay (int secs);
+
