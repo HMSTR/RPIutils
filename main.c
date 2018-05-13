@@ -1,6 +1,6 @@
 #include <time.h>
 
-void time(){
+void lcdEtime(){
     char *buf = "Current Time:";
     LCDinit();
     while(1){
@@ -12,13 +12,13 @@ void time(){
     LCDclose();
 }
 
-void LED(){
+void lcdELED(){
     LEDinit();
     LEDbroadcast(1);
 }
 
 
 int main(){
-    //time();
-    LED();
+    //lcdEtime();
+    lcdELED();
 }
