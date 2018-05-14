@@ -1,4 +1,4 @@
-#include "OneWire.h"
+#include "1-wire.h"
 #include <wiringPi.h>
 #include <stdexcept>
 #include <iostream>
