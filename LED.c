@@ -11,10 +11,10 @@ void LEDinit(){
 }
 
 void LEDbroadcast(int val){
-    digitalWrite(LED_RED,1);
-    digitalWrite(LED_BL1,1);
-    digitalWrite(LED_BL2,1);
-    digitalWrite(LED_BL3,1);
-    digitalWrite(LED_GRE,1);
-    digitalWrite(LED_YEL,1);
+    digitalWrite(LED_RED,val);
+    digitalWrite(LED_BL1,val);
+    digitalWrite(LED_BL2,val);
+    digitalWrite(LED_BL3,val);
+    digitalWrite(LED_GRE,val);
+    digitalWrite(LED_YEL,val);
 }
