@@ -1,4 +1,6 @@
 #pragma once
+#include <wiringPi.h>
+
 #define ONEWIRE_H
  
 #define CMD_CONVERTTEMP    0x44
