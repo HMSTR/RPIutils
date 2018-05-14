@@ -16,7 +16,7 @@ using namespace std;
 int main(){
     OneWire *reader = new OneWire(6);
     reader->oneWireInit();
-    int n = 10;
+    int n = 15;
     uint64_t roms[n];
     reader->searchRom(roms, n);
     cout << "We've found "<< n << "roms"<<endl;

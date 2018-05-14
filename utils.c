@@ -1,6 +1,6 @@
 #include "utils.h"
 
-void delay(int sec){
+void Udelay(int sec){
     unsigned int timer = clock()+sec*100;
     while(clock()<timer);
 }

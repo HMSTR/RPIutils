@@ -16,27 +16,6 @@ void OneWire::oneWireInit() {
   pinMode(pin, INPUT);
 }
  
-/*
- * сброс
- */
-int OneWire::reset() {
-  int response;
- 
-  pinMode(pin, OUTPUT);
-  digitalWrite(pin, LOW);
-  delayMicroseconds(480);
- 
-  // Когда ONE WIRE устройство обнаруживает положительный перепад, он ждет от 15us до 60us
-  pinMode(pin, INPUT);
-  delayMicroseconds(60);
- 
-  // и затем передает импульс присутствия, перемещая шину в логический «0» на длительность от 60us до 240us.
-  response = digitalRead(pin);
-  delayMicroseconds(410);
- 
-  // если 0, значит есть ответ от датчика, если 1 - нет
-  return response;
-}
  
 /*
  * отправить один бит
@@ -123,61 +102,6 @@ uint64_t OneWire::readRom(void) {
   }
   return oneWireDevice;
 }
- 
-/*
- * Команда соответствия ROM, сопровождаемая последовательностью
- * кода ROM на 64 бита позволяет устройству управления шиной
- * обращаться к определенному подчиненному устройству на шине.
- */
-void OneWire::setDevice(uint64_t rom) {
-  uint8_t i = 64;
-  reset();
-  writeByte (CMD_MATCHROM);
-  while (i--) {
-    writeBit(rom & 1);
-    rom >>= 1;
-  }
-}
- 
-/*
- * провеска CRC, возвращает "0", если нет ошибок
- * и не "0", если есть ошибки
- */
-int OneWire::crcCheck(uint64_t data8x8bit, uint8_t len) {
-  uint8_t dat, crc = 0, fb, stByte = 0;
-  do {
-    dat = (uint8_t)(data8x8bit >> (stByte * 8));
-    // счетчик битов в байте
-    for (int i = 0; i < 8; i++) {
-      fb = crc ^ dat;
-      fb &= 1;
-      crc >>= 1;
-      dat >>= 1;
-      if (fb == 1) {
-        crc ^= 0x8c; // полином
-      }
-    }
-    stByte++;
-  } while (stByte < len);   // счетчик байтов в массиве
-  return crc;
-}
- 
-uint8_t OneWire::crc8(uint8_t addr[], uint8_t len) {
-  uint8_t crc = 0;
-  while (len--) {
-    uint8_t inbyte = *addr++;
-    for (uint8_t i = 8; i; i--) {
-      uint8_t mix = (crc ^ inbyte) & 0x01;
-      crc >>= 1;
-      if (mix) {
-        crc ^= 0x8c;
-      }
-      inbyte >>= 1;
-    }
-  }
-  return crc;
-}
- 
 /*
  * поиск устройств
  */
