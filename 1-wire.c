@@ -107,7 +107,7 @@ uint8_t OneWire::readBit(void) {
 /*
  * читать ROM подчиненного устройства (код 64 бита)
  */
-uint64_t OneWire::readRoom(void) {
+uint64_t OneWire::readRom(void) {
   uint64_t oneWireDevice;
   if (reset() == 0) {
     writeByte (CMD_READROM);
