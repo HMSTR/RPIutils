@@ -186,3 +186,25 @@ void OneWire::skipRom() {
   reset();
   writeByte (CMD_SKIPROM);
 }
+
+/*
+ * сброс
+ */
+int OneWire::reset() {
+  int response;
+ 
+  pinMode(pin, OUTPUT);
+  digitalWrite(pin, LOW);
+  delayMicroseconds(480);
+ 
+  // Когда ONE WIRE устройство обнаруживает положительный перепад, он ждет от 15us до 60us
+  pinMode(pin, INPUT);
+  delayMicroseconds(60);
+ 
+  // и затем передает импульс присутствия, перемещая шину в логический «0» на длительность от 60us до 240us.
+  response = digitalRead(pin);
+  delayMicroseconds(410);
+ 
+  // если 0, значит есть ответ от датчика, если 1 - нет
+  return response;
+}
