@@ -1,4 +1,5 @@
 #include "LCD.h"
+
 extern i2c;
 int LIGHT_STATE;
 
