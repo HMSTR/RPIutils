@@ -37,5 +37,5 @@ public:
   void skipRom(void);
   uint8_t readByte(void);
   uint8_t readBit(void);
-  uint64_t readRoom(void);
+  uint64_t readRom(void);
 };
