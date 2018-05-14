@@ -2,12 +2,12 @@
 
 void LEDinit(){
     wiringPiSetup();
-    pinMode(LED_RED,OUTPUT);
-    pinMode(LED_BL1,OUTPUT);
-    pinMode(LED_BL2,OUTPUT);
-    pinMode(LED_BL3,OUTPUT);
-    pinMode(LED_GRE,OUTPUT);
-    pinMode(LED_YEL,OUTPUT);
+    pinMode(LED_RED,OUT);
+    pinMode(LED_BL1,OUT);
+    pinMode(LED_BL2,OUT);
+    pinMode(LED_BL3,OUT);
+    pinMode(LED_GRE,OUT);
+    pinMode(LED_YEL,OUT);
 }
 
 void LEDbroadcast(int val){
